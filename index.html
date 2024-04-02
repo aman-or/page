@@ -118,17 +118,17 @@
             let phone = document.getElementById("user_phone").value;
 
             if(name.length < 4) {
-                document.getElementById("error").innerText = "Error in name";
+                document.getElementById("error").innerText = "Ошибка в имени";
                 return;
             }
 
-            if(email.length < 5) {
-                document.getElementById("error").innerText = "Error in email";
+            if(email.length < 5 || !email.includes('@')) {
+                document.getElementById("error").innerText = "Ошибка в email";
                 return;
             }
 
             if(phone.length < 4) {
-                document.getElementById("error").innerText = "Error in phone";
+                document.getElementById("error").innerText = "Ошибка в номере телефона";
                 return;
             }
 
@@ -138,8 +138,7 @@
                 phone: phone
             }
 
-            tg.senData(JSON.stringify(data);
-
+            tg.sendData(JSON.stringify(data));
             tg.close();
         });
     </script>
